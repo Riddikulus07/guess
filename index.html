@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Guess The Number</title>
+
+    <style>
+        html {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    }
+    .container{
+        align-self: center;
+        font-size: large;
+        border-style: dotted;
+        background-color: darkcyan;
+        color: white;
+        margin-top: 15%;
+        display: inline-block;
+        padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+
+}
+body{
+    background-image: url(https://wallpaperaccess.com/full/2095724.png);
+}
+.guessSubmit:hover{background-color: aqua;color: white;
+
+}
+.guessSubmit:active{
+    opacity: 0.7;
+    transition: 15ms;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+<h1>Guess The Number</h1>
+
+<p>Try and Guess A Number From 1-50 .</p>
+
+<div class="form">
+    <label for="a">Enter a guess: </label>
+    <input type = "text" id = "a" class = "guessField" placeholder="Write A Number Here" style="border-radius: 5px;padding: 5px;border: none;">
+<br><br>    <input type = "submit" value = "Submit guess"
+        class = "guessSubmit" id = "submitguess" style="border: none;border-radius: 5px;cursor: pointer; padding: 10px;color:rgb(29, 177, 226);background-color: white">
+<p id="p"></p>
+    </div>
+</div>
+<script type = "text/javascript">
+    var y =parseInt((Math.random()*50)+1);;
+    var ans = 1;
+    
+    document.getElementById("submitguess").onclick = function(){
+    
+var x = document.getElementById("a").value;
+
+if(x == y)
+{   
+document.getElementById("p").innerHTML="You Got it right in "+ans+" Guesses"}
+    
+else if(x>y)
+{
+    ans++;
+    document.getElementById("p").innerHTML="Try A Smaller Number"}
+    
+
+
+else
+{
+    ans++;
+    document.getElementById("p").innerHTML="Try A Larger Number"}
+    
+}
+</script>
+</body>
+</html>
